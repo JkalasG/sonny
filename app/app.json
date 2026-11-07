@@ -1,0 +1,64 @@
+{
+  "expo": {
+    "name": "Sonny",
+    "slug": "sonny",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "sonny",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "icon": "./assets/images/icon.png",
+      "bundleIdentifier": "com.sonny.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#BCD7F1",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "com.sonny.app"
+    },
+    "web": {
+      "output": "server",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#BCD7F1",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 160
+        }
+      ],
+      "expo-asset",
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Sonny uses the camera to read a suspicious message. / Sonny usa la cámara para leer un mensaje sospechoso.",
+          "photosPermission": "Sonny reads a screenshot of a suspicious message. / Sonny lee la captura de un mensaje sospechoso.",
+          "microphonePermission": false
+        }
+      ],
+      "./plugins/with-bundled-text-recognition.js"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "da8fb9a2-b5eb-46b1-98b0-726d167e7fbf"
+      }
+    }
+  }
+}
