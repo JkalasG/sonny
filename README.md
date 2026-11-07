@@ -31,8 +31,8 @@
 | | |
 |---|---|
 | 🏆 **Devpost submission** | _add the Devpost link here_ |
-| 🎥 **Demo video (2–5 min)** | _add the YouTube / Vimeo link here_ |
-| 🌐 **Live web demo** | _add the deployed URL here (optional)_ |
+| 🎥 **Demo video (2:37)** | https://youtu.be/bzXX4HfKGzE · [MP4 in this repo](docs/video/sonny-demo.mp4) |
+| 🌐 **Live web demo** | https://sonny-app-rosy.vercel.app/ |
 | 📱 **Android APK** | _add the EAS build link here (optional)_ |
 | 💻 **Source code** | https://github.com/JkalasG/sonny |
 
@@ -71,6 +71,18 @@ If you are a hackathon judge evaluating Sonny:
 3. Tap **"Fake Bank Alert"** or **"Package on Hold"**: Sonny catches the scam in **~0.1 ms on-device**, highlights dangerous words, and explains fake domains.
 4. Tap **"Legitimate Bank Code"** or **"Family Dinner"**: See how Sonny prevents false positives on actual bank security 2FA codes.
 5. **Offline Test:** Turn on Airplane Mode or disconnect WiFi. Sonny continues to analyze messages offline with full privacy.
+
+---
+
+## ⚡ Quick judge demo (1 minute, no typing)
+
+1. Open the **[live demo](https://sonny-app-rosy.vercel.app/)**. No account, key or install needed.
+2. Go to **Examples** and tap **Fake bank** or **Package on hold**: Sonny flags the scam, and **Why?** highlights the words and the fake link.
+3. Tap **Bank code** or **Family** ("Are you coming for dinner on Sunday?"): Sonny does **not** raise a false alarm on normal messages.
+4. Go to **Results** and press **Try the invisible-character attack**: the score doesn't change, because we fixed that attack.
+5. **Offline test:** with the page open, turn off your Wi-Fi and check another message. Our model and the link rules keep working on the device.
+
+> The public demo runs in **test mode**: our own model works for real, and only the AI second opinion is simulated (the "Why?" screen says so). To use the real AI, set `AI_PROVIDER=gemini` and `AI_API_KEY` (see [Run it locally](#-run-it-locally)).
 
 ---
 

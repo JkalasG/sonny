@@ -31,8 +31,8 @@
 | | |
 |---|---|
 | 🏆 **Página en Devpost** | _agrega aquí el enlace de Devpost_ |
-| 🎥 **Video de demostración (2–5 min)** | _agrega aquí el enlace de YouTube / Vimeo_ |
-| 🌐 **Demo web en línea** | _agrega aquí la URL publicada (opcional)_ |
+| 🎥 **Video de demostración (2:37)** | https://youtu.be/bzXX4HfKGzE · [MP4 en este repositorio](docs/video/sonny-demo.mp4) |
+| 🌐 **Demo web en línea** | https://sonny-app-rosy.vercel.app/ |
 | 📱 **APK de Android** | _agrega aquí el enlace de la compilación de EAS (opcional)_ |
 | 💻 **Código fuente** | https://github.com/JkalasG/sonny |
 
@@ -71,6 +71,18 @@ Si eres jurado del hackathon evaluando Sonny:
 3. Toca **"Banco falso"** o **"Paquete retenido"**: Sonny detecta la estafa en **~0,1 ms en el propio equipo**, resalta las palabras peligrosas y explica los dominios falsos.
 4. Toca **"Código del banco"** o **"Familia"**: comprueba cómo Sonny evita falsos positivos ante códigos 2FA legítimos de seguridad bancaria.
 5. **Prueba sin conexión:** Activa el Modo Avión o apaga el WiFi. Sonny sigue analizando los mensajes en local sin enviar un solo byte a la nube.
+
+---
+
+## ⚡ Prueba rápida para el jurado (1 minuto, sin escribir)
+
+1. Abre la **[demo en línea](https://sonny-app-rosy.vercel.app/)**. No hace falta cuenta, clave ni instalar nada.
+2. Ve a **Examples** (Ejemplos) y toca **Fake bank** o **Package on hold**: Sonny marca la estafa, y **Why?** (¿Por qué?) resalta las palabras y el enlace falso.
+3. Toca **Bank code** o **Family** ("Are you coming for dinner on Sunday?"): Sonny **no** da una falsa alarma con mensajes normales.
+4. Ve a **Results** (Resultados) y presiona **Try the invisible-character attack**: la puntuación no cambia, porque arreglamos ese ataque.
+5. **Prueba sin internet:** con la página abierta, apaga el Wi-Fi y revisa otro mensaje. El modelo propio y las reglas de enlaces siguen funcionando en el equipo.
+
+> La demo pública está en **modo de prueba**: el modelo propio funciona de verdad y solo la segunda opinión de la IA es simulada (la pantalla "¿Por qué?" lo indica). Para usar la IA real, configura `AI_PROVIDER=gemini` y `AI_API_KEY` (ver [Correrlo en tu computadora](#-correrlo-en-tu-computadora)).
 
 ---
 
