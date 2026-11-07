@@ -1,0 +1,86 @@
+[
+ {
+  "text": "Su paquete est\u00e1 retenido. Pague 1,99\u20ac en: correos-envio.info/pago",
+  "expected": "su paquete esta retenido. pague 0,0\u20ac en: urltok"
+ },
+ {
+  "text": "Your package is on hold. Pay $1.99 at https://bit.ly/3xYz now!",
+  "expected": "your package is on hold. pay $0.0 at urltok now!"
+ },
+ {
+  "text": "Cu\u00e9ntame, \u00bfc\u00f3mo est\u00e1s? \u00d1and\u00fa, ping\u00fcino, acci\u00f3n.",
+  "expected": "cuentame, \u00bfcomo estas? nandu, pinguino, accion."
+ },
+ {
+  "text": "Llama al +591 712-34567 o al 800 10 2030 hoy",
+  "expected": "llama al phonetok o al phonetok hoy"
+ },
+ {
+  "text": "Tu c\u00f3digo es 482913. No lo compartas.",
+  "expected": "tu codigo es 0. no lo compartas."
+ },
+ {
+  "text": "Escr\u00edbenos a soporte@banco-seguro.com.bo URGENTE",
+  "expected": "escribenos a mailtok urgente"
+ },
+ {
+  "text": "Visita www.ejemplo.com/ruta?x=1&y=2 o EJEMPLO.ORG",
+  "expected": "visita urltok o urltok"
+ },
+ {
+  "text": "santander.com.verificacion-segura.net/login",
+  "expected": "urltok"
+ },
+ {
+  "text": "http://185.23.11.4/login",
+  "expected": "urltok"
+ },
+ {
+  "text": "Emoji \ud83d\ude00\ud83d\udc4d\ud83c\udffd y texto con\u00a0espacio duro\u2003y\u3000raros",
+  "expected": "emoji \ud83d\ude00\ud83d\udc4d\ud83c\udffd y texto con espacio duro y raros"
+ },
+ {
+  "text": "Separadores\u001cde\u001dcontrol\u0085y\u2028l\u00ednea",
+  "expected": "separadores de control y linea"
+ },
+ {
+  "text": "BOM\ufeffinvisible y ZWSP\u200bentre",
+  "expected": "bominvisible y zwspentre"
+ },
+ {
+  "text": "Ver\u200cifi\u200cque su cu\u200denta ban\u2060caria\u00ad ya",
+  "expected": "verifique su cuenta bancaria ya"
+ },
+ {
+  "text": "Escrib\u00ed aqu\u00ed.Gracias por todo, ver mi.web.com.bo/x",
+  "expected": "escribi aqui.gracias por todo, ver urltok"
+ },
+ {
+  "text": "\u03a3\u039f\u03a6\u039f\u03a3 \u039f\u0394\u03a5\u03a3\u03a3\u0395\u03a5\u03a3 \u03c3\u03bf\u03c6\u03cc\u03c2",
+  "expected": "\u03c3\u03bf\u03c6\u03bf\u03c3 \u03bf\u03b4\u03c5\u03c3\u03c3\u03b5\u03c5\u03c3 \u03c3\u03bf\u03c6\u03bf\u03c3"
+ },
+ {
+  "text": "\u0130stanbul D\u0130KKAT \u00df stra\u00dfe \ufb01nal",
+  "expected": "istanbul dikkat \u00df stra\u00dfe final"
+ },
+ {
+  "text": "\u00f8resund.dk et \u00e6ble",
+  "expected": "\u00f8 urltok et \u00e6ble"
+ },
+ {
+  "text": "   espacios    m\u00faltiples\n\n\ty saltos   ",
+  "expected": "espacios multiples y saltos"
+ },
+ {
+  "text": "Hola mam\u00e1, se me rompi\u00f3 el celular, este es mi n\u00famero nuevo",
+  "expected": "hola mama, se me rompio el celular, este es mi numero nuevo"
+ },
+ {
+  "text": "WINNER!! You have won \u00a3900. Call 09061701461 now. Code KL341",
+  "expected": "winner!! you have won \u00a30. call phonetok now. code kl0"
+ },
+ {
+  "text": "",
+  "expected": ""
+ }
+]

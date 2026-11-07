@@ -1,0 +1,1764 @@
+{
+ "cross_lingual": {
+  "en->en": {
+   "precision": 0.9635036496350365,
+   "recall": 0.9295774647887324,
+   "f1": 0.946236559139785,
+   "auc": 0.9970936731500113
+  },
+  "en->es": {
+   "precision": 0.5130890052356021,
+   "recall": 0.532608695652174,
+   "f1": 0.5226666666666666,
+   "auc": 0.5498813093453273
+  },
+  "es->en": {
+   "precision": 0.16584158415841585,
+   "recall": 0.47183098591549294,
+   "f1": 0.2454212454212454,
+   "auc": 0.4933117221849616
+  },
+  "es->es": {
+   "precision": 0.9542857142857143,
+   "recall": 0.907608695652174,
+   "f1": 0.9303621169916435,
+   "auc": 0.9783545727136431
+  }
+ },
+ "en": {
+  "data": {
+   "total": 5981,
+   "scams": 944,
+   "dev": 5083,
+   "test": 898,
+   "by_source": {
+    "mendeley_sms": {
+     "total": 844,
+     "scams": 324,
+     "words": 18,
+     "channel": "sms"
+    },
+    "uci_sms": {
+     "total": 5137,
+     "scams": 620,
+     "words": 12,
+     "channel": "sms"
+    }
+   },
+   "relabeled": 0
+  },
+  "bootstrap": {
+   "precision": {
+    "value": 0.9635036496350365,
+    "lo": 0.9291069506599445,
+    "hi": 0.9919370967741935
+   },
+   "recall": {
+    "value": 0.9295774647887324,
+    "lo": 0.8851165833463521,
+    "hi": 0.9699413976116762
+   },
+   "f1": {
+    "value": 0.946236559139785,
+    "lo": 0.9182844759544151,
+    "hi": 0.9714330779630465
+   },
+   "auc": {
+    "value": 0.9970936731500113,
+    "lo": 0.9928427678920932,
+    "hi": 0.9994725296706052
+   }
+  },
+  "thresholds": [
+   {
+    "t": 0.1,
+    "tag": "",
+    "precision": 0.6911764705882353,
+    "recall": 0.9929577464788732,
+    "fpr": 0.08333333333333333
+   },
+   {
+    "t": 0.1349,
+    "tag": "T_SAFE",
+    "precision": 0.7704918032786885,
+    "recall": 0.9929577464788732,
+    "fpr": 0.05555555555555555
+   },
+   {
+    "t": 0.2,
+    "tag": "",
+    "precision": 0.879746835443038,
+    "recall": 0.9788732394366197,
+    "fpr": 0.02513227513227513
+   },
+   {
+    "t": 0.3,
+    "tag": "",
+    "precision": 0.9440559440559441,
+    "recall": 0.9507042253521126,
+    "fpr": 0.010582010582010581
+   },
+   {
+    "t": 0.3035,
+    "tag": "T_MID",
+    "precision": 0.9440559440559441,
+    "recall": 0.9507042253521126,
+    "fpr": 0.010582010582010581
+   },
+   {
+    "t": 0.4,
+    "tag": "",
+    "precision": 0.9568345323741008,
+    "recall": 0.9366197183098591,
+    "fpr": 0.007936507936507936
+   },
+   {
+    "t": 0.4722,
+    "tag": "T_SCAM",
+    "precision": 0.9635036496350365,
+    "recall": 0.9295774647887324,
+    "fpr": 0.006613756613756613
+   },
+   {
+    "t": 0.5,
+    "tag": "",
+    "precision": 0.9635036496350365,
+    "recall": 0.9295774647887324,
+    "fpr": 0.006613756613756613
+   },
+   {
+    "t": 0.6,
+    "tag": "",
+    "precision": 0.9774436090225563,
+    "recall": 0.9154929577464789,
+    "fpr": 0.003968253968253968
+   },
+   {
+    "t": 0.7,
+    "tag": "",
+    "precision": 0.9848484848484849,
+    "recall": 0.9154929577464789,
+    "fpr": 0.0026455026455026454
+   },
+   {
+    "t": 0.8,
+    "tag": "",
+    "precision": 0.9844961240310077,
+    "recall": 0.8943661971830986,
+    "fpr": 0.0026455026455026454
+   },
+   {
+    "t": 0.9,
+    "tag": "",
+    "precision": 0.9917355371900827,
+    "recall": 0.8450704225352113,
+    "fpr": 0.0013227513227513227
+   }
+  ],
+  "brier": 0.012895895108712488,
+  "baselines": {
+   "Siempre \"legítimo\"": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc": 0.5
+   },
+   "Lista de palabras clave": {
+    "precision": 0.5882352941176471,
+    "recall": 0.6338028169014085,
+    "f1": 0.6101694915254238,
+    "auc": 0.789058424621805
+   },
+   "TF-IDF de palabras + regresión logística": {
+    "precision": 0.9230769230769231,
+    "recall": 0.9295774647887324,
+    "f1": 0.9263157894736842,
+    "auc": 0.9870146806766525
+   },
+   "N-gramas de caracteres + Naive Bayes": {
+    "precision": 0.9663865546218487,
+    "recall": 0.8098591549295775,
+    "f1": 0.8812260536398467,
+    "auc": 0.9764513003949624
+   },
+   "**Sonny** (n-gramas de caracteres + regresión logística)": {
+    "precision": 0.9635036496350365,
+    "recall": 0.9295774647887324,
+    "f1": 0.946236559139785,
+    "auc": 0.9970936731500113
+   }
+  },
+  "learning": [
+   {
+    "frac": 0.1,
+    "n": 508,
+    "f1": 0.8918017627200946,
+    "f1_sd": 0.010561048633045375,
+    "auc": 0.9913244901507813,
+    "recall": 0.8333333333333334
+   },
+   {
+    "frac": 0.25,
+    "n": 1271,
+    "f1": 0.9188947349583021,
+    "f1_sd": 0.006250234910726967,
+    "auc": 0.9948580371115582,
+    "recall": 0.8779342723004694
+   },
+   {
+    "frac": 0.5,
+    "n": 2542,
+    "f1": 0.9420274579040292,
+    "f1_sd": 0.002962679369898931,
+    "auc": 0.9964571378890628,
+    "recall": 0.9154929577464789
+   },
+   {
+    "frac": 0.75,
+    "n": 3812,
+    "f1": 0.9398996948351129,
+    "f1_sd": 0.004555689519903961,
+    "auc": 0.9965875499913058,
+    "recall": 0.9178403755868545
+   },
+   {
+    "frac": 1.0,
+    "n": 5083,
+    "f1": 0.946236559139785,
+    "f1_sd": 0.0,
+    "auc": 0.9970936731500113,
+    "recall": 0.9295774647887324
+   }
+  ],
+  "cross_source": [
+   {
+    "train": "mendeley_sms",
+    "test": "mendeley_sms",
+    "n": 127,
+    "precision": 0.98,
+    "recall": 1.0,
+    "f1": 0.98989898989899,
+    "auc": 0.9986917844060702
+   },
+   {
+    "train": "mendeley_sms",
+    "test": "uci_sms",
+    "n": 5137,
+    "precision": 0.9006211180124224,
+    "recall": 0.9354838709677419,
+    "f1": 0.9177215189873418,
+    "auc": 0.9924200332792961
+   },
+   {
+    "train": "uci_sms",
+    "test": "mendeley_sms",
+    "n": 844,
+    "precision": 0.9771241830065359,
+    "recall": 0.9228395061728395,
+    "f1": 0.9492063492063492,
+    "auc": 0.9965930674264007
+   },
+   {
+    "train": "uci_sms",
+    "test": "uci_sms",
+    "n": 771,
+    "precision": 0.9418604651162791,
+    "recall": 0.8709677419354839,
+    "f1": 0.9050279329608939,
+    "auc": 0.9941161544073334
+   }
+  ],
+  "robustness": [
+   {
+    "name": "TODO EN MAYÚSCULAS",
+    "affected": 875,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Sin tildes ni eñes",
+    "affected": 22,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Errores de tipeo (1 de cada 10 palabras)",
+    "affected": 452,
+    "mean_abs_dp": 0.00884567602242639,
+    "verdict_changed": 0.017699115044247787,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Espacios y saltos de línea extra",
+    "affected": 895,
+    "mean_abs_dp": 0.00019074511838249888,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Emojis al final",
+    "affected": 898,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Otro enlace (cambia el dominio)",
+    "affected": 71,
+    "mean_abs_dp": 0.00010520637376514882,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Caracteres invisibles insertados",
+    "affected": 896,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Números cambiados",
+    "affected": 248,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.9295774647887324,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Mensaje recortado a la mitad",
+    "affected": 895,
+    "mean_abs_dp": 0.06987248060948659,
+    "verdict_changed": 0.10726256983240223,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.6197183098591549,
+    "scams_safe_before": 1,
+    "scams_safe_after": 15
+   },
+   {
+    "name": "Ofuscación l33t (o→0, e→3, a→4, i→1)",
+    "affected": 896,
+    "mean_abs_dp": 0.08690719648446067,
+    "verdict_changed": 0.19754464285714285,
+    "recall_before": 0.9295774647887324,
+    "recall_after": 0.8591549295774648,
+    "scams_safe_before": 1,
+    "scams_safe_after": 3
+   }
+  ],
+  "word_vs_char": [
+   {
+    "name": "Sin cambios",
+    "word": 0.9295774647887324,
+    "char": 0.9295774647887324
+   },
+   {
+    "name": "Tipeo en 10 % de las palabras",
+    "word": 0.9295774647887324,
+    "char": 0.9295774647887324
+   },
+   {
+    "name": "Tipeo en 30 % de las palabras",
+    "word": 0.8802816901408451,
+    "char": 0.9225352112676056
+   },
+   {
+    "name": "Ofuscación l33t",
+    "word": 0.7816901408450704,
+    "char": 0.8591549295774648
+   }
+  ],
+  "errors": {
+   "fn": [
+    {
+     "text": "Do you realize that in about 40 years, we'll have thousands of old ladies running around with tattoos?",
+     "p": 0.03474216754625391,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "safe"
+    },
+    {
+     "text": "Oh my god! I've found your number again! I'm so glad, text me back xafter this msgs cst std ntwk chg £1.50",
+     "p": 0.1624757835348227,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Hi ya babe x u 4goten bout me?' scammers getting smart..Though this is a regular vodafone no, if you respond …",
+     "p": 0.18909821327423718,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "For sale - arsenal dartboard. Good condition but no doubles or trebles!",
+     "p": 0.21878897897528848,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Guess who am I?This is the first time I created a web page WWW.ASJESUS.COM read all I wrote. I'm waiting for …",
+     "p": 0.24757707989576416,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Latest News! Police station toilet stolen, cops have nothing to go on!",
+     "p": 0.26684398418343885,
+     "source": "uci_sms",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    }
+   ],
+   "fp": [
+    {
+     "text": "NEFT Transaction with reference number 456367 for Rs.9000 has been credited to the beneficiary account on 5th…",
+     "p": 0.9149236932218026,
+     "source": "mendeley_sms",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "I (Career Tel) have added u as a contact on INDYAROCKS.COM to send FREE SMS. To remove from phonebook - sms N…",
+     "p": 0.888025606968452,
+     "source": "uci_sms",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "WHEN THE FIRST STRIKE IS A RED ONE. THE BIRD + ANTELOPE BEGIN TOPLAY IN THE FIELDOF SELFINDEPENDENCE BELIEVE …",
+     "p": 0.6507049632198755,
+     "source": "uci_sms",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "Ryder unsold.now gibbs.",
+     "p": 0.5530874363433287,
+     "source": "uci_sms",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "Any chance you might have had with me evaporated as soon as you violated my privacy by stealing my phone numb…",
+     "p": 0.5383194259612395,
+     "source": "uci_sms",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "Your bill at 3 is £33.65 so thats not bad!",
+     "p": 0.4514836887765546,
+     "source": "uci_sms",
+     "subtype": "ham",
+     "verdict": "suspicious"
+    }
+   ],
+   "n_fn": 10,
+   "n_fp": 5
+  },
+  "ngrams": [
+   [
+    [
+     " 0",
+     6.003677698951497
+    ],
+    [
+     "0 ",
+     5.538346829867191
+    ],
+    [
+     "net",
+     4.159183309759432
+    ],
+    [
+     "tok ",
+     3.890504413724771
+    ],
+    [
+     "tok",
+     3.8865416449463446
+    ],
+    [
+     "eto",
+     3.8260463884987304
+    ],
+    [
+     "oneto",
+     3.7869507299734866
+    ],
+    [
+     "netok",
+     3.7869507299734866
+    ],
+    [
+     "etok ",
+     3.7869507299734866
+    ],
+    [
+     "etok",
+     3.7869507299734866
+    ],
+    [
+     "honet",
+     3.7869507299734866
+    ],
+    [
+     "neto",
+     3.7869507299734866
+    ],
+    [
+     "onet",
+     3.7677159977769947
+    ],
+    [
+     "to",
+     3.6440239078203662
+    ],
+    [
+     "0p",
+     3.425098176989497
+    ]
+   ],
+   [
+    [
+     "i ",
+     -3.4796544444447743
+    ],
+    [
+     " i ",
+     -3.254872356217997
+    ],
+    [
+     "..",
+     -2.998064079792905
+    ],
+    [
+     " i",
+     -2.636727265724583
+    ],
+    [
+     "my ",
+     -2.4349392492140605
+    ],
+    [
+     " my ",
+     -2.3862279156229693
+    ],
+    [
+     " my",
+     -2.3243777532355017
+    ],
+    [
+     "my",
+     -2.2177417106570774
+    ],
+    [
+     ".. ",
+     -2.026714437724846
+    ],
+    [
+     " me ",
+     -1.9558548510777374
+    ],
+    [
+     ":)",
+     -1.7895032521431038
+    ],
+    [
+     " m",
+     -1.7516451672244875
+    ],
+    [
+     "me ",
+     -1.6145167919383412
+    ],
+    [
+     "i'",
+     -1.5791382297770509
+    ],
+    [
+     " it",
+     -1.5681069854065142
+    ]
+   ]
+  ],
+  "cascade": {
+   "kept_on_device": 0.15256124721603564,
+   "sent_to_ai": 0.8474387527839644,
+   "offline": {
+    "scam": {
+     "scam": 132,
+     "suspicious": 9,
+     "safe": 1
+    },
+    "legit": {
+     "scam": 5,
+     "suspicious": 37,
+     "safe": 714
+    }
+   },
+   "n": 898
+  }
+ },
+ "es": {
+  "data": {
+   "total": 2384,
+   "scams": 1223,
+   "dev": 2026,
+   "test": 358,
+   "by_source": {
+    "softecapps": {
+     "total": 1055,
+     "scams": 557,
+     "words": 7,
+     "channel": "sms"
+    },
+    "spaphish": {
+     "total": 1329,
+     "scams": 666,
+     "words": 80,
+     "channel": "email"
+    }
+   },
+   "relabeled": 10
+  },
+  "bootstrap": {
+   "precision": {
+    "value": 0.9542857142857143,
+    "lo": 0.9199946524064172,
+    "hi": 0.9793119768832204
+   },
+   "recall": {
+    "value": 0.907608695652174,
+    "lo": 0.8633692127544587,
+    "hi": 0.9438287800148292
+   },
+   "f1": {
+    "value": 0.9303621169916435,
+    "lo": 0.9005386740331492,
+    "hi": 0.9540268612324565
+   },
+   "auc": {
+    "value": 0.9783545727136431,
+    "lo": 0.9648599811295716,
+    "hi": 0.9891003079266132
+   }
+  },
+  "thresholds": [
+   {
+    "t": 0.1,
+    "tag": "",
+    "precision": 0.6814814814814815,
+    "recall": 1.0,
+    "fpr": 0.4942528735632184
+   },
+   {
+    "t": 0.132,
+    "tag": "T_SAFE",
+    "precision": 0.71484375,
+    "recall": 0.9945652173913043,
+    "fpr": 0.41954022988505746
+   },
+   {
+    "t": 0.2,
+    "tag": "",
+    "precision": 0.8144796380090498,
+    "recall": 0.9782608695652174,
+    "fpr": 0.23563218390804597
+   },
+   {
+    "t": 0.3,
+    "tag": "",
+    "precision": 0.8762376237623762,
+    "recall": 0.9619565217391305,
+    "fpr": 0.14367816091954022
+   },
+   {
+    "t": 0.4,
+    "tag": "",
+    "precision": 0.9251336898395722,
+    "recall": 0.9402173913043478,
+    "fpr": 0.08045977011494253
+   },
+   {
+    "t": 0.5,
+    "tag": "T_MID",
+    "precision": 0.9542857142857143,
+    "recall": 0.907608695652174,
+    "fpr": 0.04597701149425287
+   },
+   {
+    "t": 0.6,
+    "tag": "",
+    "precision": 0.9570552147239264,
+    "recall": 0.8478260869565217,
+    "fpr": 0.040229885057471264
+   },
+   {
+    "t": 0.7,
+    "tag": "",
+    "precision": 0.9668874172185431,
+    "recall": 0.7934782608695652,
+    "fpr": 0.028735632183908046
+   },
+   {
+    "t": 0.7502,
+    "tag": "T_SCAM",
+    "precision": 0.9857142857142858,
+    "recall": 0.75,
+    "fpr": 0.011494252873563218
+   },
+   {
+    "t": 0.8,
+    "tag": "",
+    "precision": 0.9923664122137404,
+    "recall": 0.7065217391304348,
+    "fpr": 0.005747126436781609
+   },
+   {
+    "t": 0.9,
+    "tag": "",
+    "precision": 0.9893617021276596,
+    "recall": 0.5054347826086957,
+    "fpr": 0.005747126436781609
+   }
+  ],
+  "brier": 0.06187594126999004,
+  "baselines": {
+   "Siempre \"legítimo\"": {
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "auc": 0.5
+   },
+   "Lista de palabras clave": {
+    "precision": 0.6549295774647887,
+    "recall": 0.5054347826086957,
+    "f1": 0.5705521472392638,
+    "auc": 0.6239692653673165
+   },
+   "TF-IDF de palabras + regresión logística": {
+    "precision": 0.9542857142857143,
+    "recall": 0.907608695652174,
+    "f1": 0.9303621169916435,
+    "auc": 0.9753248375812095
+   },
+   "N-gramas de caracteres + Naive Bayes": {
+    "precision": 0.9022988505747126,
+    "recall": 0.8532608695652174,
+    "f1": 0.8770949720670391,
+    "auc": 0.9348138430784607
+   },
+   "**Sonny** (n-gramas de caracteres + regresión logística)": {
+    "precision": 0.9542857142857143,
+    "recall": 0.907608695652174,
+    "f1": 0.9303621169916435,
+    "auc": 0.9783545727136431
+   }
+  },
+  "learning": [
+   {
+    "frac": 0.1,
+    "n": 203,
+    "f1": 0.8110438200027579,
+    "f1_sd": 0.022022129873961148,
+    "auc": 0.8908150091620856,
+    "recall": 0.7663043478260869
+   },
+   {
+    "frac": 0.25,
+    "n": 506,
+    "f1": 0.8434987816531833,
+    "f1_sd": 0.002217686382291167,
+    "auc": 0.9333250041645845,
+    "recall": 0.8007246376811595
+   },
+   {
+    "frac": 0.5,
+    "n": 1013,
+    "f1": 0.8848894490245346,
+    "f1_sd": 0.013316724521445389,
+    "auc": 0.957583708145927,
+    "recall": 0.8442028985507246
+   },
+   {
+    "frac": 0.75,
+    "n": 1520,
+    "f1": 0.9208836961928508,
+    "f1_sd": 0.005405176712729044,
+    "auc": 0.9700774612693653,
+    "recall": 0.8967391304347826
+   },
+   {
+    "frac": 1.0,
+    "n": 2026,
+    "f1": 0.9303621169916435,
+    "f1_sd": 0.0,
+    "auc": 0.9783545727136431,
+    "recall": 0.907608695652174
+   }
+  ],
+  "cross_source": [
+   {
+    "train": "softecapps",
+    "test": "softecapps",
+    "n": 159,
+    "precision": 0.95,
+    "recall": 0.9047619047619048,
+    "f1": 0.926829268292683,
+    "auc": 0.9703174603174604
+   },
+   {
+    "train": "softecapps",
+    "test": "spaphish",
+    "n": 1329,
+    "precision": 0.5072463768115942,
+    "recall": 0.42042042042042044,
+    "f1": 0.45977011494252873,
+    "auc": 0.5142903084079555
+   },
+   {
+    "train": "spaphish",
+    "test": "softecapps",
+    "n": 1055,
+    "precision": 0.533678756476684,
+    "recall": 0.36983842010771995,
+    "f1": 0.4369034994697773,
+    "auc": 0.5405896476390302
+   },
+   {
+    "train": "spaphish",
+    "test": "spaphish",
+    "n": 199,
+    "precision": 0.9583333333333334,
+    "recall": 0.92,
+    "f1": 0.9387755102040817,
+    "auc": 0.990909090909091
+   }
+  ],
+  "robustness": [
+   {
+    "name": "TODO EN MAYÚSCULAS",
+    "affected": 358,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Sin tildes ni eñes",
+    "affected": 248,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Errores de tipeo (1 de cada 10 palabras)",
+    "affected": 249,
+    "mean_abs_dp": 0.026012335041178974,
+    "verdict_changed": 0.08032128514056225,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.9184782608695652,
+    "scams_safe_before": 1,
+    "scams_safe_after": 2
+   },
+   {
+    "name": "Espacios y saltos de línea extra",
+    "affected": 358,
+    "mean_abs_dp": 0.0005401580353267213,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Emojis al final",
+    "affected": 358,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Otro enlace (cambia el dominio)",
+    "affected": 72,
+    "mean_abs_dp": 0.01708414936032472,
+    "verdict_changed": 0.05555555555555555,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.9021739130434783,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Caracteres invisibles insertados",
+    "affected": 358,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Números cambiados",
+    "affected": 175,
+    "mean_abs_dp": 0.0,
+    "verdict_changed": 0.0,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.907608695652174,
+    "scams_safe_before": 1,
+    "scams_safe_after": 1
+   },
+   {
+    "name": "Mensaje recortado a la mitad",
+    "affected": 358,
+    "mean_abs_dp": 0.08933624549544164,
+    "verdict_changed": 0.19553072625698323,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.8858695652173914,
+    "scams_safe_before": 1,
+    "scams_safe_after": 3
+   },
+   {
+    "name": "Ofuscación l33t (o→0, e→3, a→4, i→1)",
+    "affected": 358,
+    "mean_abs_dp": 0.2774085572241225,
+    "verdict_changed": 0.6312849162011173,
+    "recall_before": 0.907608695652174,
+    "recall_after": 0.6195652173913043,
+    "scams_safe_before": 1,
+    "scams_safe_after": 0
+   }
+  ],
+  "word_vs_char": [
+   {
+    "name": "Sin cambios",
+    "word": 0.907608695652174,
+    "char": 0.907608695652174
+   },
+   {
+    "name": "Tipeo en 10 % de las palabras",
+    "word": 0.9130434782608695,
+    "char": 0.9184782608695652
+   },
+   {
+    "name": "Tipeo en 30 % de las palabras",
+    "word": 0.8804347826086957,
+    "char": 0.9021739130434783
+   },
+   {
+    "name": "Ofuscación l33t",
+    "word": 0.6793478260869565,
+    "char": 0.6195652173913043
+   }
+  ],
+  "errors": {
+   "fn": [
+    {
+     "text": "Tu cuenta Uber se cerrará en 30 días a menos que inicies sesión Hola, Ricardo Molina: Hace mucho que no usas …",
+     "p": 0.13000257650276364,
+     "source": "spaphish",
+     "subtype": "phishing",
+     "verdict": "safe"
+    },
+    {
+     "text": "Nuevos cambios de precios de su membresía Cambios de precios Hola, Diego Ramos: El costo de tu plan ha cambia…",
+     "p": 0.13227395203053152,
+     "source": "spaphish",
+     "subtype": "phishing",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Hola seré tu nutricionista online",
+     "p": 0.15259021594675543,
+     "source": "softecapps",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Hemos recibido una solicitud de cambio de Numero. Listo tu cambio de numero se efectuara en las proximas hora…",
+     "p": 0.1792804727163013,
+     "source": "spaphish",
+     "subtype": "phishing",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Este es un aviso de tu factura vencida",
+     "p": 0.24514097948649402,
+     "source": "softecapps",
+     "subtype": "spam",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Acto admin XNU083167 enviado al buzon YDP628570 HACIENDA Secretaría de Hacienda y Crédito Público Se te ha en…",
+     "p": 0.25442258407199864,
+     "source": "spaphish",
+     "subtype": "phishing",
+     "verdict": "suspicious"
+    }
+   ],
+   "fp": [
+    {
+     "text": "Notificación de Entrega SHEIN Mercado Chic Estimado Cliente, Su pedido MCHQWE99990YYKK con número de seguimie…",
+     "p": 0.9126938929014263,
+     "source": "spaphish",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "Convierte tu cuenta a Mercado Pago Wallet Es fácil. Y está todo aquí. Hazlo para seguir usándola como siempre…",
+     "p": 0.753151278892583,
+     "source": "spaphish",
+     "subtype": "ham",
+     "verdict": "scam"
+    },
+    {
+     "text": "Te extrano y quiero verte",
+     "p": 0.7401527295532249,
+     "source": "softecapps",
+     "subtype": "ham",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Dale la bienvenida a tu premio: Suscripción gratis a Spotify Premium - 3 meses Disfrútalo ahora. Gracias por …",
+     "p": 0.7236957761663033,
+     "source": "spaphish",
+     "subtype": "ham",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Tu suscripcion expirara pronto",
+     "p": 0.7068530200238503,
+     "source": "softecapps",
+     "subtype": "ham",
+     "verdict": "suspicious"
+    },
+    {
+     "text": "Extendimos tu periodo de prueba gratis",
+     "p": 0.6656166069809705,
+     "source": "softecapps",
+     "subtype": "ham",
+     "verdict": "suspicious"
+    }
+   ],
+   "n_fn": 17,
+   "n_fp": 8
+  },
+  "ngrams": [
+   [
+    [
+     "su ",
+     3.377775090783646
+    ],
+    [
+     " su ",
+     3.359022529027186
+    ],
+    [
+     "gana",
+     2.550500342717599
+    ],
+    [
+     " su",
+     2.5292732813859313
+    ],
+    [
+     " gan",
+     2.5271230413733186
+    ],
+    [
+     " gana",
+     2.5244754432251195
+    ],
+    [
+     "gana ",
+     2.4837091093219
+    ],
+    [
+     "sitam",
+     2.3516628002222437
+    ],
+    [
+     "su",
+     2.322301299579639
+    ],
+    [
+     "gan",
+     2.1138706954885436
+    ],
+    [
+     " con ",
+     2.0917509255435847
+    ],
+    [
+     "con ",
+     2.0771874810016278
+    ],
+    [
+     "esita",
+     1.9980088092456805
+    ],
+    [
+     "sita",
+     1.975474425885327
+    ],
+    [
+     " ga",
+     1.900183315890763
+    ]
+   ],
+   [
+    [
+     " tu ",
+     -2.867762647909488
+    ],
+    [
+     " tu",
+     -2.7341796626048858
+    ],
+    [
+     "tu ",
+     -2.678645475843976
+    ],
+    [
+     " t",
+     -2.6153243321102204
+    ],
+    [
+     "tu",
+     -2.129995191753365
+    ],
+    [
+     " a ",
+     -2.0644178901711863
+    ],
+    [
+     "ias ",
+     -1.92905023754631
+    ],
+    [
+     "ias",
+     -1.8861568429831692
+    ],
+    [
+     " ci",
+     -1.8572537052909925
+    ],
+    [
+     " y",
+     -1.8158219138063214
+    ],
+    [
+     "url",
+     -1.8054116038531103
+    ],
+    [
+     "rlt",
+     -1.7849885271968833
+    ],
+    [
+     "rlto",
+     -1.7849885271968833
+    ],
+    [
+     "urlto",
+     -1.7849885271968833
+    ],
+    [
+     "urlt",
+     -1.7849885271968833
+    ]
+   ]
+  ],
+  "cascade": {
+   "kept_on_device": 0.39106145251396646,
+   "sent_to_ai": 0.6089385474860335,
+   "offline": {
+    "scam": {
+     "scam": 138,
+     "suspicious": 45,
+     "safe": 1
+    },
+    "legit": {
+     "scam": 2,
+     "suspicious": 71,
+     "safe": 101
+    }
+   },
+   "n": 358
+  }
+ },
+ "lang": {
+  "cm": [
+   [
+    898,
+    0
+   ],
+   [
+    3,
+    355
+   ]
+  ],
+  "by_len": [
+   {
+    "bucket": "1–3 palabras",
+    "n": 23,
+    "acc": 1.0,
+    "accepted": 0.9565217391304348
+   },
+   {
+    "bucket": "4–8 palabras",
+    "n": 392,
+    "acc": 0.9974489795918368,
+    "accepted": 0.9693877551020408
+   },
+   {
+    "bucket": "9–20 palabras",
+    "n": 373,
+    "acc": 1.0,
+    "accepted": 0.9919571045576407
+   },
+   {
+    "bucket": "más de 20",
+    "n": 468,
+    "acc": 0.9957264957264957,
+    "accepted": 0.9914529914529915
+   }
+  ],
+  "mixed": [
+   {
+    "text": "ok",
+    "p_es": 0.01859127403073176,
+    "decision": "en",
+    "expected": null
+   },
+   {
+    "text": "gracias",
+    "p_es": 0.8194238443542149,
+    "decision": "es",
+    "expected": "es"
+   },
+   {
+    "text": "thanks",
+    "p_es": 0.02470708159609408,
+    "decision": "en",
+    "expected": "en"
+   },
+   {
+    "text": "hola",
+    "p_es": 0.45548254966755963,
+    "decision": "principal",
+    "expected": "es"
+   },
+   {
+    "text": "hi",
+    "p_es": 0.028952902385670914,
+    "decision": "en",
+    "expected": "en"
+   },
+   {
+    "text": "Ok, nos vemos mañana",
+    "p_es": 0.5774673719091264,
+    "decision": "principal",
+    "expected": "es"
+   },
+   {
+    "text": "See you tomorrow!",
+    "p_es": 0.021719536661612894,
+    "decision": "en",
+    "expected": "en"
+   },
+   {
+    "text": "Tu cuenta de Netflix ha sido suspendida",
+    "p_es": 0.8905079609974306,
+    "decision": "es",
+    "expected": "es"
+   },
+   {
+    "text": "Your Netflix account is on hold",
+    "p_es": 0.036468841392774724,
+    "decision": "en",
+    "expected": "en"
+   },
+   {
+    "text": "Hola, your package is waiting",
+    "p_es": 0.025938185641805153,
+    "decision": "en",
+    "expected": null
+   },
+   {
+    "text": "Call me cuando puedas",
+    "p_es": 0.40388772310377974,
+    "decision": "principal",
+    "expected": null
+   },
+   {
+    "text": "Su código OTP es 4821",
+    "p_es": 0.33553177802106554,
+    "decision": "principal",
+    "expected": "es"
+   },
+   {
+    "text": "Your OTP is 4821",
+    "p_es": 0.006820485357407032,
+    "decision": "en",
+    "expected": "en"
+   },
+   {
+    "text": "BBVA",
+    "p_es": 0.16288154065541446,
+    "decision": "en",
+    "expected": null
+   },
+   {
+    "text": "😀😀",
+    "p_es": 0.04733254783994842,
+    "decision": "en",
+    "expected": null
+   }
+  ],
+  "n": 1256
+ },
+ "battery": [
+  {
+   "lang": "es",
+   "tipo": "falso paquete",
+   "label": 1,
+   "text": "Su paquete está retenido. Pague 1,99 para liberarlo en: entregas-envio.info/pago",
+   "p": 0.7653639556574833,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    "su ",
+    " su ",
+    " su"
+   ],
+   "down": [
+    "url",
+    "rlt",
+    "urlt"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "falso banco",
+   "label": 1,
+   "text": "Su cuenta ha sido bloqueada por seguridad. Verifique sus datos aquí: banco-verifica.xyz",
+   "p": 0.7152637979468499,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " su",
+    "su ",
+    " su "
+   ],
+   "down": [
+    "url",
+    "rlt",
+    "urlt"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "hijo en apuros",
+   "label": 1,
+   "text": "Hola mamá, se me rompió el celular, este es mi número nuevo. Escríbeme por WhatsApp",
+   "p": 0.12868443012561734,
+   "verdict": "safe",
+   "ok": false,
+   "up": [
+    "pi",
+    "ama",
+    " romp"
+   ],
+   "down": [
+    "hola ",
+    "ola ",
+    "lu"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "falso premio",
+   "label": 1,
+   "text": "Felicidades, ha ganado un iPhone. Reclámelo hoy aquí: premios-ya.top",
+   "p": 0.7831347548083896,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    "gana",
+    " gan",
+    " gana"
+   ],
+   "down": [
+    " fel",
+    " feli",
+    "url"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "falsa multa",
+   "label": 1,
+   "text": "Tiene una multa de tránsito pendiente. Pague antes de 24 horas para evitar recargos: multas-pago.click",
+   "p": 0.41797405049870673,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    "iene ",
+    "ene ",
+    "ne "
+   ],
+   "down": [
+    "sito ",
+    " t",
+    "url"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "falso trabajo",
+   "label": 1,
+   "text": "Gane 300 dólares al día desde casa, sin experiencia. Escríbanos por WhatsApp",
+   "p": 0.34322072736635295,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " gan",
+    "gan",
+    " ga"
+   ],
+   "down": [
+    " dia ",
+    "lar",
+    "sa"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "inversión",
+   "label": 1,
+   "text": "Duplique su dinero en 7 días con criptomonedas. Inversión garantizada",
+   "p": 0.8777120399386596,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    "su ",
+    " su ",
+    " ga"
+   ],
+   "down": [
+    "gara",
+    "ias ",
+    "ias"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "código de verificación",
+   "label": 0,
+   "text": "Tu código es 482913. No lo compartas con nadie.",
+   "p": 0.40342487904113267,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " con ",
+    "con ",
+    "nad"
+   ],
+   "down": [
+    " tu ",
+    "tu ",
+    " tu"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "cita médica",
+   "label": 0,
+   "text": "Recordatorio de su cita el día 12 a las 10:00 en el consultorio",
+   "p": 0.020996040865455364,
+   "verdict": "safe",
+   "ok": true,
+   "up": [
+    "su ",
+    " su ",
+    "su"
+   ],
+   "down": [
+    "cita ",
+    " ci",
+    "orio"
+   ]
+  },
+  {
+   "lang": "es",
+   "tipo": "mensaje familiar",
+   "label": 0,
+   "text": "¿Vienes a comer el domingo?",
+   "p": 0.3444814494243779,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    "domin",
+    "dom",
+    "domi"
+   ],
+   "down": [
+    "o?",
+    "o? ",
+    " come"
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "fake package",
+   "label": 1,
+   "text": "Your package is on hold. Pay $1.99 to release it at: delivery-redeliver.info/pay",
+   "p": 0.7688165483728167,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    "0 ",
+    ": ",
+    "tok "
+   ],
+   "down": [
+    " i",
+    " it",
+    " it "
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "fake bank",
+   "label": 1,
+   "text": "Your bank account has been locked. Verify your details here: bank-verify.xyz",
+   "p": 0.8735423455784844,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    ": ",
+    "tok ",
+    "tok"
+   ],
+   "down": [
+    " h",
+    "en ",
+    "nt "
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "family in trouble",
+   "label": 1,
+   "text": "Hi mom, I broke my phone, this is my new number. Text me on WhatsApp",
+   "p": 0.10961400744428984,
+   "verdict": "safe",
+   "ok": false,
+   "up": [
+    "xt",
+    "ne",
+    "xt "
+   ],
+   "down": [
+    "my ",
+    " my ",
+    " my"
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "fake prize",
+   "label": 1,
+   "text": "Congratulations! You have won an iPhone. Claim it today: prizes-now.top",
+   "p": 0.8669072277458397,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    ": ",
+    "on",
+    "tok "
+   ],
+   "down": [
+    " i",
+    " it",
+    " it "
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "fake fine",
+   "label": 1,
+   "text": "You have an unpaid toll. Pay within 24 hours to avoid a fine: toll-pay.click",
+   "p": 0.3987970061710648,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " 0",
+    "0 ",
+    "to"
+   ],
+   "down": [
+    " h",
+    "hou",
+    "thin"
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "fake job",
+   "label": 1,
+   "text": "Earn $300 a day from home, no experience needed. Message us on WhatsApp",
+   "p": 0.2117137301603974,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    "0 ",
+    "ex",
+    "ne"
+   ],
+   "down": [
+    " me",
+    "no ",
+    " no "
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "investment",
+   "label": 1,
+   "text": "Double your money in 7 days with crypto. Guaranteed returns",
+   "p": 0.6500797734574366,
+   "verdict": "scam",
+   "ok": true,
+   "up": [
+    " 0",
+    "0 ",
+    "one"
+   ],
+   "down": [
+    " i",
+    " m",
+    "o."
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "verification code",
+   "label": 0,
+   "text": "Your verification code is 482913. Do not share it with anyone.",
+   "p": 0.3466048726599682,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " 0",
+    "0.",
+    "on"
+   ],
+   "down": [
+    " i",
+    " it",
+    " it "
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "appointment",
+   "label": 0,
+   "text": "Reminder: your appointment is on the 12th at 10:00",
+   "p": 0.264966270796533,
+   "verdict": "suspicious",
+   "ok": true,
+   "up": [
+    " 0",
+    "0 ",
+    ": "
+   ],
+   "down": [
+    " i",
+    "nt ",
+    "is"
+   ]
+  },
+  {
+   "lang": "en",
+   "tipo": "family message",
+   "label": 0,
+   "text": "Are you coming for dinner on Sunday?",
+   "p": 0.0739341700293854,
+   "verdict": "safe",
+   "ok": true,
+   "up": [
+    "nne",
+    "ne",
+    "su"
+   ],
+   "down": [
+    " comi",
+    "comi",
+    "comin"
+   ]
+  }
+ ],
+ "js": {
+  "node": "24.18.0",
+  "iterations": 2000,
+  "models": {
+   "en.sonny": {
+    "mb": 0.833205,
+    "load_ms": 16.072699999999998,
+    "median_ms": 0.12960000000003902,
+    "p99_ms": 1.886000000000024
+   },
+   "es.sonny": {
+    "mb": 0.822928,
+    "load_ms": 12.407599999999945,
+    "median_ms": 0.06380000000001473,
+    "p99_ms": 1.8336000000001604
+   },
+   "lang.sonny": {
+    "mb": 0.13803,
+    "load_ms": 2.1002999999998337,
+    "median_ms": 0.08169999999995525,
+    "p99_ms": 1.2959999999998217
+   }
+  }
+ }
+}

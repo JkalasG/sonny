@@ -1,0 +1,16 @@
+{
+ "en": {
+  "recall_before": 0.9295774647887324,
+  "recall_after": 0.8943661971830986,
+  "scam_safe_before": 1,
+  "scam_safe_after": 4,
+  "n_scam": 142
+ },
+ "es": {
+  "recall_before": 0.9239130434782609,
+  "recall_after": 0.5706521739130435,
+  "scam_safe_before": 1,
+  "scam_safe_after": 7,
+  "n_scam": 184
+ }
+}

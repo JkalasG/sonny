@@ -50,7 +50,6 @@ export default function Result() {
   const notes = (
     <>
       {notice && <Notice>{notice}</Notice>}
-      {a.aiProvider === "mock" && <Notice>{t("mockNotice")}</Notice>}
       {settings.detailed && (
         <Panel style={{ padding: 14 }}>
           <Small>

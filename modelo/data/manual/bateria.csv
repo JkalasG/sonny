@@ -1,0 +1,21 @@
+text,label,lang,tipo
+"Su paquete está retenido. Pague 1,99 para liberarlo en: entregas-envio.info/pago",1,es,falso paquete
+"Su cuenta ha sido bloqueada por seguridad. Verifique sus datos aquí: banco-verifica.xyz",1,es,falso banco
+"Hola mamá, se me rompió el celular, este es mi número nuevo. Escríbeme por WhatsApp",1,es,hijo en apuros
+"Felicidades, ha ganado un iPhone. Reclámelo hoy aquí: premios-ya.top",1,es,falso premio
+"Tiene una multa de tránsito pendiente. Pague antes de 24 horas para evitar recargos: multas-pago.click",1,es,falsa multa
+"Gane 300 dólares al día desde casa, sin experiencia. Escríbanos por WhatsApp",1,es,falso trabajo
+"Duplique su dinero en 7 días con criptomonedas. Inversión garantizada",1,es,inversión
+"Tu código es 482913. No lo compartas con nadie.",0,es,código de verificación
+"Recordatorio de su cita el día 12 a las 10:00 en el consultorio",0,es,cita médica
+"¿Vienes a comer el domingo?",0,es,mensaje familiar
+"Your package is on hold. Pay $1.99 to release it at: delivery-redeliver.info/pay",1,en,fake package
+"Your bank account has been locked. Verify your details here: bank-verify.xyz",1,en,fake bank
+"Hi mom, I broke my phone, this is my new number. Text me on WhatsApp",1,en,family in trouble
+"Congratulations! You have won an iPhone. Claim it today: prizes-now.top",1,en,fake prize
+"You have an unpaid toll. Pay within 24 hours to avoid a fine: toll-pay.click",1,en,fake fine
+"Earn $300 a day from home, no experience needed. Message us on WhatsApp",1,en,fake job
+"Double your money in 7 days with crypto. Guaranteed returns",1,en,investment
+"Your verification code is 482913. Do not share it with anyone.",0,en,verification code
+"Reminder: your appointment is on the 12th at 10:00",0,en,appointment
+"Are you coming for dinner on Sunday?",0,en,family message

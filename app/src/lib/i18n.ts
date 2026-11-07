@@ -78,10 +78,6 @@ const T = {
     en: "I couldn't get a second opinion: basic check.",
     tu: "No pude pedir una segunda opinión: revisión básica.",
   },
-  mockNotice: {
-    en: "Test mode: Sonny's own model ran normally; only the Gemini second opinion is simulated.",
-    tu: "Modo de prueba: el modelo propio funcionó normal; solo la segunda opinión de Gemini es simulada.",
-  },
   otherLanguageNotice: {
     en: "This message is in Spanish. Here's what it says:",
     tu: "Este mensaje está en inglés. Esto es lo que dice:",

@@ -20,7 +20,7 @@ npm install
 
 | Comando | IA | Para qué |
 |---|---|---|
-| `npm run web:mock` | **Simulada** (sin clave ni internet) | Probar toda la app y hacer demos de interfaz. La app muestra "🧪 Modo de prueba" |
+| `npm run web:mock` | **Simulada** (sin clave ni internet) | Probar toda la app y hacer demos. En "¿Por qué?" se indica que la segunda opinión es simulada |
 | `npm run web` | La que diga `.env` (`AI_PROVIDER`) | Uso normal. Con `AI_PROVIDER=gemini` + `AI_API_KEY` es la IA real |
 | `npm run web` sin clave | Ninguna | Solo el **modelo propio + reglas**, como sin internet. Las fotos se leen con el OCR del navegador (`public/ocr/`) |
 
@@ -30,15 +30,15 @@ Después abre **http://localhost:8081**. Para pararlo: `Ctrl + C`.
 
 ### Modo de prueba (IA simulada)
 
-`AI_PROVIDER=mock` sustituye **solo a Gemini** (la segunda opinión) por un simulador (`src/server/mock-ai.ts`). **El modelo propio funciona exactamente igual**: analiza primero cada mensaje en el dispositivo, y si la estafa es clara el simulador ni se llama. El simulador decide con palabras clave para poder recorrer todos los caminos de la cascada, y su respuesta pasa por la misma tabla de decisión que Gemini (por ejemplo, en la zona alta no puede bajar a ✅). Con una foto, "lee" siempre el mismo mensaje de paquete retenido.
+`AI_PROVIDER=mock` sustituye **solo a Gemini** (la segunda opinión) por un simulador (`src/server/mock-ai.ts`). **El modelo propio funciona exactamente igual**: analiza primero cada mensaje en el dispositivo, y si la estafa es clara el simulador ni se llama. El simulador decide con palabras clave para poder recorrer todos los caminos de la cascada, y su respuesta pasa por la misma tabla de decisión que Gemini (por ejemplo, en la zona alta no puede bajar a ✅). Con una foto, el simulador no la lee: la app lee el texto en el propio equipo (OCR) y le pide la opinión sobre ese texto real. Reconoce también la estafa del "familiar en apuros" ("se me rompió el celular, este es mi número nuevo").
 
 | Comando | Escenario | Qué deberías ver |
 |---|---|---|
-| `npm run web:mock` | `auto` | Veredictos según palabras clave + aviso "🧪 Modo de prueba" |
+| `npm run web:mock` | `auto` | Veredictos según palabras clave |
 | `npm run web:mock:fail` | `fail` | La IA falla → "No pude pedir una segunda opinión: revisión básica." |
 | `npm run web:mock:slow` | `slow` | La IA tarda más de 15 s → la app deja de esperar y usa el modelo propio |
 | `node scripts/web.mjs mock scam` | `scam` / `suspicious` / `safe` | La IA da siempre ese veredicto (útil para ver la regla "en zona alta la IA no baja a ✅") |
-| `node scripts/web.mjs mock unreadable` | `unreadable` | Con foto: "No puedo leer bien la foto…" |
+| `node scripts/web.mjs mock unreadable` | `unreadable` | Igual que `auto` (el simulador nunca lee fotos; las lee el OCR del equipo) |
 
 Los comandos `web:mock*` **tienen prioridad sobre `.env`** y no lo modifican. También puedes fijar el modo en `.env` con `AI_PROVIDER=mock` y `AI_MOCK_SCENARIO=…`.
 

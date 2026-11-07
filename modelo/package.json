@@ -1,0 +1,13 @@
+{
+  "name": "sonny-modelo",
+  "private": true,
+  "type": "module",
+  "description": "Pruebas de los modelos de Sonny en JavaScript (coincidencia con Python, comportamiento y velocidad)",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "test": "node --test js/parity.test.ts js/model.test.ts",
+    "test:py": "python -m unittest discover -s tests -v",
+    "bench": "node js/bench.ts",
+    "all": "python 02_prepare.py && python 03_train.py && python 04_export.py && python 05_bateria.py && python 06_analisis.py && npm test && npm run test:py"
+  }
+}

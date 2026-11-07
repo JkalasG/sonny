@@ -1,0 +1,268 @@
+{
+  "en": {
+    "lang": "en",
+    "C": 8,
+    "cv_f1": {
+      "0.5": 0.9487,
+      "1": 0.954,
+      "2": 0.96,
+      "4": 0.9656,
+      "8": 0.9712,
+      "16": 0.9718,
+      "32": 0.9723
+    },
+    "thresholds": {
+      "scam": 0.4722,
+      "mid": 0.3035,
+      "safe": 0.1349,
+      "notes": [
+        "T_MID fuera de [T_SAFE, T_SCAM]; se usa el punto medio"
+      ]
+    },
+    "test@0.5": {
+      "n": 898,
+      "scams": 142,
+      "precision": 0.9635,
+      "recall": 0.9296,
+      "f1": 0.9462,
+      "roc_auc": 0.9971,
+      "confusion": {
+        "tn": 751,
+        "fp": 5,
+        "fn": 10,
+        "tp": 132
+      }
+    },
+    "test_cascade_zones": {
+      "scam_zone": {
+        "total": 137,
+        "scams": 132,
+        "legit": 5
+      },
+      "high_gray": {
+        "total": 6,
+        "scams": 3,
+        "legit": 3
+      },
+      "low_gray": {
+        "total": 40,
+        "scams": 6,
+        "legit": 34
+      },
+      "safe_zone": {
+        "total": 715,
+        "scams": 1,
+        "legit": 714
+      },
+      "scams_called_safe_offline_pct": 0.7,
+      "legit_called_scam_without_ai_pct": 0.66
+    },
+    "test_per_source": {
+      "mendeley_sms": {
+        "n": 127,
+        "scams": 49,
+        "precision": 0.9796,
+        "recall": 0.9796,
+        "f1": 0.9796,
+        "roc_auc": 0.9982,
+        "confusion": {
+          "tn": 77,
+          "fp": 1,
+          "fn": 1,
+          "tp": 48
+        }
+      },
+      "uci_sms": {
+        "n": 771,
+        "scams": 93,
+        "precision": 0.9545,
+        "recall": 0.9032,
+        "f1": 0.9282,
+        "roc_auc": 0.9958,
+        "confusion": {
+          "tn": 674,
+          "fp": 4,
+          "fn": 9,
+          "tp": 84
+        }
+      }
+    },
+    "test_per_subtype": {
+      "ham": {
+        "n": 756,
+        "detected_at_0.5": 5,
+        "below_T_SAFE": 714
+      },
+      "smishing": {
+        "n": 29,
+        "detected_at_0.5": 28,
+        "below_T_SAFE": 0
+      },
+      "spam": {
+        "n": 113,
+        "detected_at_0.5": 104,
+        "below_T_SAFE": 1
+      }
+    },
+    "dataset": {
+      "dev": {
+        "total": 5083,
+        "scams": 802
+      },
+      "test": {
+        "total": 898,
+        "scams": 142
+      },
+      "by_source": {
+        "mendeley_sms": {
+          "total": 844,
+          "scams": 324
+        },
+        "uci_sms": {
+          "total": 5137,
+          "scams": 620
+        }
+      },
+      "relabeled": 0
+    },
+    "vocab_size": 30000
+  },
+  "es": {
+    "lang": "es",
+    "C": 8,
+    "cv_f1": {
+      "0.5": 0.8579,
+      "1": 0.8777,
+      "2": 0.8854,
+      "4": 0.8957,
+      "8": 0.899,
+      "16": 0.8996,
+      "32": 0.8992
+    },
+    "thresholds": {
+      "scam": 0.7502,
+      "mid": 0.5,
+      "safe": 0.132,
+      "notes": []
+    },
+    "test@0.5": {
+      "n": 358,
+      "scams": 184,
+      "precision": 0.9543,
+      "recall": 0.9076,
+      "f1": 0.9304,
+      "roc_auc": 0.9784,
+      "confusion": {
+        "tn": 166,
+        "fp": 8,
+        "fn": 17,
+        "tp": 167
+      }
+    },
+    "test_cascade_zones": {
+      "scam_zone": {
+        "total": 140,
+        "scams": 138,
+        "legit": 2
+      },
+      "high_gray": {
+        "total": 35,
+        "scams": 29,
+        "legit": 6
+      },
+      "low_gray": {
+        "total": 81,
+        "scams": 16,
+        "legit": 65
+      },
+      "safe_zone": {
+        "total": 102,
+        "scams": 1,
+        "legit": 101
+      },
+      "scams_called_safe_offline_pct": 0.54,
+      "legit_called_scam_without_ai_pct": 1.15
+    },
+    "test_per_source": {
+      "softecapps": {
+        "n": 159,
+        "scams": 84,
+        "precision": 0.9512,
+        "recall": 0.9286,
+        "f1": 0.9398,
+        "roc_auc": 0.9805,
+        "confusion": {
+          "tn": 71,
+          "fp": 4,
+          "fn": 6,
+          "tp": 78
+        }
+      },
+      "spaphish": {
+        "n": 199,
+        "scams": 100,
+        "precision": 0.957,
+        "recall": 0.89,
+        "f1": 0.9223,
+        "roc_auc": 0.9778,
+        "confusion": {
+          "tn": 95,
+          "fp": 4,
+          "fn": 11,
+          "tp": 89
+        }
+      }
+    },
+    "test_per_subtype": {
+      "ham": {
+        "n": 174,
+        "detected_at_0.5": 8,
+        "below_T_SAFE": 101
+      },
+      "phishing": {
+        "n": 100,
+        "detected_at_0.5": 89,
+        "below_T_SAFE": 1
+      },
+      "spam": {
+        "n": 84,
+        "detected_at_0.5": 78,
+        "below_T_SAFE": 0
+      }
+    },
+    "dataset": {
+      "dev": {
+        "total": 2026,
+        "scams": 1039
+      },
+      "test": {
+        "total": 358,
+        "scams": 184
+      },
+      "by_source": {
+        "softecapps": {
+          "total": 1055,
+          "scams": 557
+        },
+        "spaphish": {
+          "total": 1329,
+          "scams": 666
+        }
+      },
+      "relabeled": 10
+    },
+    "vocab_size": 29976
+  },
+  "lang_detector": {
+    "test_n": 1256,
+    "accuracy": 0.9976,
+    "accuracy_short_le_8_words": 0.9976,
+    "accuracy_per_channel": {
+      "email": 0.9899,
+      "sms": 0.9991
+    },
+    "accept_threshold": 0.8,
+    "share_accepted": 0.9841,
+    "accuracy_when_accepted": 1.0
+  }
+}

@@ -4,7 +4,8 @@
 >
 > Complemento de `Sonny_Documentacion.md`.
 > Recoge el rediseño **pensado primero para personas mayores** y todos los aspectos que faltaban: técnicos, legales, de riesgo, de pruebas y del propio hackathon.
-> Cuando este documento y la documentación principal no coincidan, **manda este**.
+>
+> **Orden de prioridad:** `Sonny_Modelo_y_Arquitectura.md` > **este documento** > `Sonny_Documentacion.md`. Las secciones que el documento de arquitectura cambió están marcadas con 🔁: la voz (2.3), el trato (3.1), el contrato y el prompt de la IA (6.1, 6.2), la regla de palabras clave (8.1), los errores sin conexión (8.3, 8.4) y el idioma de la app (12).
 
 ---
 
@@ -29,7 +30,7 @@
 
 ## 1. Principio rector: diseñado para mayores
 
-La versión anterior pensaba como alguien que se maneja bien con el móvil. A partir de ahora, **cada decisión se valida con una pregunta**:
+La versión anterior pensaba como alguien que se maneja bien con el celular. A partir de ahora, **cada decisión se valida con una pregunta**:
 
 > *¿Mi abuela podría usar esto sola, sin gafas de cerca y sin nadie al lado?*
 
@@ -53,7 +54,7 @@ Copiar un SMS es una de las tareas que más cuesta a las personas mayores. Pasa 
 
 | Botón | Qué hace | Para quién |
 |---|---|---|
-| 📷 **Hazle una foto** | Abre la cámara para fotografiar la pantalla del móvil, una carta o un papel | Quien no sabe hacer capturas, o recibe el mensaje en otro dispositivo |
+| 📷 **Tómale una foto** | Abre la cámara para fotografiar la pantalla del celular, una carta o un papel | Quien no sabe hacer capturas, o recibe el mensaje en otro dispositivo |
 | 🎤 **Léemelo** | La persona lee el mensaje en voz alta y la app lo transcribe | Quien no sabe usar la cámara o tiene poca visión |
 | 🖼️ **Elige una captura** | Abre la galería | Quien sí sabe hacer capturas |
 | ⌨️ *Pegar texto* (pequeño, abajo) | Campo de texto clásico | Familiares, jóvenes, el jurado |
@@ -65,21 +66,20 @@ El resultado deja de ser un panel con puntuación, tipo de estafa y lista de se�
 | Veredicto | Titular | Razón, en la voz de Sonny (ejemplo) |
 |---|---|---|
 | 🛑 Estafa | **NO lo abras. Es una estafa.** | Se hacen pasar por tu banco para quitarte dinero. |
-| ⚠️ Dudoso | **Espera. Esto no me cuadra.** | Mejor no hagas nada y lo preguntamos. |
+| ⚠️ Dudoso | **Espera. Esto no me convence.** | Mejor no hagas nada y lo preguntamos. |
 | ✅ Normal | **Esto parece normal.** | Pero ya sabes: tus claves, nunca a nadie. |
 
 - **Se elimina la puntuación numérica** de la pantalla principal (confunde y transmite falsa precisión).
 - **Se elimina el "tipo de estafa"** como etiqueta técnica; se integra en la razón.
 - Los detalles (señales, fragmentos resaltados) quedan detrás de un botón **"¿Por qué?"**.
 
-### 2.3 La app habla sola
+### 2.3 🔁 La voz, como complemento
 
-- El titular y la razón se **leen en voz alta automáticamente** al mostrar el resultado.
-- Voz **pausada** (velocidad reducida) y en el idioma del usuario.
-- Botón grande **🔊 Repetir**.
-- Opción para desactivar la voz automática (por ejemplo, en lugares públicos).
+> **Cambiado** (`Sonny_Modelo_y_Arquitectura.md`, sección 10): la prioridad es el **texto en pantalla**. La voz está **desactivada por defecto** y se activa en Ajustes.
 
-> ⚠️ En el navegador, la voz automática puede bloquearse si el usuario no ha tocado nada antes. Como siempre hay un toque previo (el botón de foto o de voz), no debería ser un problema, pero hay que probarlo. Ver [sección 7](#7-limitaciones-de-expo-en-la-web).
+- Con la voz activada, el resultado muestra un botón grande **🔊 Escuchar**; **no se reproduce sola**.
+- Voz del propio dispositivo (`expo-speech`), **pausada** (velocidad reducida) y en el idioma del usuario.
+- Como siempre hay un toque previo (el botón Escuchar), el navegador no la bloquea.
 
 ### 2.4 Llamar a alguien de confianza
 
@@ -112,12 +112,12 @@ Todo el texto de la app, y la voz, salen **de Sonny en primera persona**, no de 
 
 | En vez de… | Sonny dice… |
 |---|---|
-| "Analizando mensaje…" | "Déjame mirarlo… un momento." |
+| "Analizando mensaje…" | "Déjame revisarlo… un momento." |
 | "Resultado del análisis" | *(sin título; directamente el veredicto)* |
-| "Se recomienda no interactuar" | "No lo abras, ¿vale?" |
-| "Error de conexión" | "Ahora mismo no puedo mirarlo. Mientras tanto, no toques nada." |
+| "Se recomienda no interactuar" | "No lo abras, ¿sí?" |
+| "Error de conexión" | "Ahora mismo no puedo revisarlo. Mientras tanto, no toques nada." |
 | "Configurar contacto de emergencia" | "¿A quién llamas tú cuando tienes una duda?" |
-| *(nada al terminar)* | "Has hecho muy bien en preguntarme. Para eso estoy." |
+| *(nada al terminar)* | "Hiciste muy bien en preguntarme. Para eso estoy." |
 
 Rasgos que nunca se rompen: **fiel** (siempre disponible), **paciente** (repite sin quejarse), **cariñoso**, **protector** (ante la duda, esperar) y **sin juzgar**.
 
@@ -126,9 +126,9 @@ Rasgos que nunca se rompen: **fiel** (siempre disponible), **paciente** (repite 
 ### 3.1 Reglas de redacción
 
 - Frases de **menos de 12 palabras**.
-- **Tutear** o usar *usted* de forma consistente (decidir uno y mantenerlo; para mayores en español, *usted* puede resultar más respetuoso; elegir según el público).
+- 🔁 **Trato decidido:** **tú** por defecto (cercano, como un nieto), cambiable a **usted** en Ajustes. Mantenerlo igual en toda la app. Español **neutro latinoamericano** ("celular", "tocar", sin "vosotros" ni servicios de un solo país).
 - **Sin tecnicismos.** Nunca: enlace malicioso, phishing, credenciales, URL, dominio, typosquatting.
-- **Sin culpa.** Nunca "has caído" o "deberías haberte dado cuenta". Siempre: *"Estas estafas engañan a mucha gente. Has hecho bien en comprobarlo."*
+- **Sin culpa.** Nunca "caíste" o "deberías haberte dado cuenta". Siempre: *"Estas estafas engañan a mucha gente. Hiciste bien en revisarlo."*
 - **Tranquilizar** antes de instruir, sobre todo en el caso de "ya di mis datos".
 
 ### 3.2 Diccionario de traducción
@@ -138,7 +138,7 @@ Rasgos que nunca se rompen: **fiel** (siempre disponible), **paciente** (repite 
 | Enlace sospechoso / typosquatting | "Este enlace parece del banco, pero es falso." |
 | Solicitud de credenciales | "Te piden tu clave. El banco nunca lo hace." |
 | Táctica de urgencia | "Te meten prisa para que no pienses." |
-| Suplantación de identidad | "Se hacen pasar por [Correos / tu banco / tu hijo]." |
+| Suplantación de identidad | "Se hacen pasar por [una empresa de envíos / tu banco / tu hijo]." |
 | Petición de pago | "Te piden dinero. Es la trampa." |
 | Premio / oferta irreal | "Nadie regala dinero así." |
 | Riesgo 92/100 | *(no se muestra)* |
@@ -170,12 +170,12 @@ El antiguo "Modo fácil" pasa a ser **el modo por defecto**. Existe un "Modo det
 
 - Cada botón lleva **icono y texto**, nunca solo icono.
 - **No depender solo del color**: rojo/amarillo/verde siempre acompañados de icono (🛑 ⚠️ ✅) y palabra.
-- **Sin animaciones** rápidas, carruseles, menús desplegables ni gestos (deslizar, mantener pulsado).
+- **Sin animaciones** rápidas, carruseles, menús desplegables ni gestos (deslizar, mantener presionado).
 - **Sin tiempos límite** ni mensajes que desaparecen solos (*toasts*).
 - **Botón "Atrás" siempre visible** y grande, con texto "Volver".
 - Respetar el **tamaño de letra del sistema** del usuario.
 - Etiquetas de accesibilidad (`accessibilityLabel`) en todos los botones para lectores de pantalla.
-- Mientras analiza: mensaje tranquilo y fijo, *"Déjame mirarlo… un momento"*, en lugar de varias frases que cambian.
+- Mientras analiza: mensaje tranquilo y fijo, *"Déjame revisarlo… un momento"*, en lugar de varias frases que cambian.
 - **Identidad visual de Sonny:** un avatar sencillo y amable (por ejemplo, un joven sonriente ilustrado de forma simple) que aparece junto a sus respuestas, para reforzar que "habla un nieto". Colores cálidos y tranquilos; evitar tipografías o colores que recuerden a marcas conocidas.
 
 ---
@@ -190,19 +190,19 @@ El antiguo "Modo fácil" pasa a ser **el modo por defecto**. Existe un "Modo det
 
 [Inicio]
   ¿Has recibido un mensaje raro?
-  [ 📷 Hazle una foto   ]
+  [ 📷 Tómale una foto  ]
   [ 🎤 Léemelo          ]
   [ 🖼️ Elige una captura ]
         pegar texto · ejemplos (pequeño)
              │
              ▼
-[Revisando…]  "Déjame mirarlo… un momento"
+[Revisando…]  "Déjame revisarlo… un momento"
              │
              ▼
-[Resultado]   🛑 NO lo abras. Es una estafa.        ← se lee en voz alta
+[Resultado]   🛑 NO lo abras. Es una estafa.        ← texto grande
               Alguien se hace pasar por tu banco.
               [ 📞 Llamar a Laura     ]
-              [ 🔊 Repetir            ]
+              [ 🔊 Escuchar (si voz) ]
               [ ¿Qué hago ahora?      ]
                  ¿Por qué? (pequeño)
              │
@@ -217,16 +217,18 @@ El antiguo "Modo fácil" pasa a ser **el modo por defecto**. Existe un "Modo det
 | **Bienvenida / contacto** | Nueva. Solo se muestra la primera vez. Se puede saltar. |
 | **Inicio** | Tres botones grandes. Pegar texto y ejemplos pasan a segundo plano. |
 | **Revisando** | Un único mensaje fijo y tranquilo. |
-| **Resultado** | Solo titular, razón y tres botones. Voz automática. |
+| **Resultado** | Solo titular, razón y tres botones. Botón "Escuchar" si la voz está activada. |
 | **Qué hago ahora** | Nueva. Pasos de uno en uno + ruta de emergencia. |
 | **¿Por qué?** | Contiene lo que antes estaba en el resultado: señales resaltadas. |
-| **Ajustes** | Contacto de confianza, voz automática sí/no, idioma, modo detallado. |
+| **Ajustes** | Idioma (English / Español), trato (tú / usted), voz (desactivada por defecto), contacto de confianza, modo detallado. |
 
 ---
 
 ## 6. Cambios técnicos derivados
 
-### 6.1 Nuevo contrato de la API
+### 6.1 🔁 Nuevo contrato de la API
+
+> **Sustituido** por `Sonny_Modelo_y_Arquitectura.md` 9.3: `verdict`, `extractedText`, `headline` (≤ 8 palabras), `reason` (≤ 20), `steps` y `emergencySteps` (≤ 3 cada uno). La IA **no** recibe la puntuación del modelo. Se mantiene abajo como referencia para la pantalla "¿Por qué?" (`signals`).
 
 Se añaden campos pensados para mayores. Los campos anteriores se mantienen para la pantalla "¿Por qué?".
 
@@ -234,11 +236,11 @@ Se añaden campos pensados para mayores. Los campos anteriores se mantienen para
 {
   "verdict": "scam",
   "headline": "NO lo abras. Es una estafa.",
-  "simpleReason": "Alguien se hace pasar por Correos para robarte dinero.",
+  "simpleReason": "Alguien se hace pasar por una empresa de envíos para robarte dinero.",
   "steps": [
     "No toques el enlace.",
     "Borra el mensaje.",
-    "Si esperas un paquete, pregunta en tu oficina de Correos."
+    "Si esperas un paquete, revisa en la web oficial."
   ],
   "emergencySteps": [
     "Llama a tu banco al número que está detrás de tu tarjeta.",
@@ -248,8 +250,8 @@ Se añaden campos pensados para mayores. Los campos anteriores se mantienen para
   "signals": [
     {
       "type": "suspicious_link",
-      "quote": "correos-envio.info/pago",
-      "explanation": "Parece la web de Correos, pero es falsa."
+      "quote": "entregas-envio.info/pago",
+      "explanation": "Parece la web de la empresa de envíos, pero es falsa."
     }
   ],
   "extractedText": "Su paquete está retenido...",
@@ -262,11 +264,13 @@ Se añaden campos pensados para mayores. Los campos anteriores se mantienen para
 - `steps`: máximo 3, cada uno de menos de 10 palabras.
 - `riskScore`: se calcula y se usa internamente, **pero no se muestra** en el modo por defecto.
 
-### 6.2 Cambios en el prompt del sistema
+### 6.2 🔁 Cambios en el prompt del sistema
+
+> **Prompt vigente:** `Sonny_Modelo_y_Arquitectura.md` 9.4 (incluye idioma de respuesta y tú/usted). Las ideas de abajo ya están incluidas en él.
 
 Añadir al prompt:
 
-> Eres Sonny, un nieto cariñoso y fiel. Habla en primera persona, con calidez y sin juzgar. Tu respuesta la leerá en voz alta una persona mayor sin conocimientos técnicos. Usa frases muy cortas. No uses nunca estas palabras: enlace malicioso, phishing, credenciales, URL, dominio. Di "enlace falso", "tu clave", "la web". No culpes al usuario. Si dudas entre "dudoso" y "seguro", elige "dudoso".
+> Eres Sonny, un nieto cariñoso y fiel. Habla en primera persona, con calidez y sin juzgar. Tu respuesta la leerá una persona mayor sin conocimientos técnicos. Usa frases muy cortas. No uses nunca estas palabras: enlace malicioso, phishing, credenciales, URL, dominio. Di "enlace falso", "tu clave", "la web". No culpes al usuario. Si dudas entre "dudoso" y "seguro", elige "dudoso".
 
 ### 6.3 Validación de la respuesta
 
@@ -278,9 +282,9 @@ Añadir al prompt:
 
 | Paquete | Uso |
 |---|---|
-| `expo-camera` o `expo-image-picker` (con `launchCameraAsync`) | Botón "Hazle una foto" |
-| Web Speech API (`SpeechRecognition`) en web / `expo-speech-recognition` en móvil | Botón "Léemelo" |
-| `expo-speech` | Voz automática y "Repetir" |
+| `expo-camera` o `expo-image-picker` (con `launchCameraAsync`) | Botón "Tómale una foto" |
+| Web Speech API (`SpeechRecognition`) en web / `expo-speech-recognition` en celular | Botón "Léemelo" |
+| `expo-speech` | Botón "Escuchar" (voz opcional) |
 | `@react-native-async-storage/async-storage` | Guardar contacto de confianza y ajustes |
 | `expo-linking` | `tel:` para llamar y `https://wa.me/` para WhatsApp |
 | `zod` | Validar la respuesta de la IA |
@@ -297,18 +301,18 @@ Las fotos de cámara pueden pesar varios MB. Antes de enviarlas:
 
 ## 7. Limitaciones de Expo en la web
 
-Como la versión principal es **web**, hay funciones que se comportan distinto que en móvil nativo:
+Como la versión principal es **web**, hay funciones que se comportan distinto que en la app nativa:
 
 | Función | Comportamiento en web | Qué hacer |
 |---|---|---|
-| **Cámara** | En el móvil, el selector de imágenes del navegador suele ofrecer "Hacer foto". En ordenador, solo abre archivos. | Probar en el móvil. Para la demo, grabar desde el móvil. |
+| **Cámara** | En el celular, el selector de imágenes del navegador suele ofrecer "Tomar foto". En computadora, solo abre archivos. | Probar en el celular. Para la demo, grabar desde el celular. |
 | **Reconocimiento de voz** | Depende del navegador: funciona en Chrome y Edge; en Safari es parcial y en Firefox no está disponible. | Detectar si existe; si no, **ocultar el botón "Léemelo"** en vez de mostrar un error. |
 | **Voz (texto a voz)** | Funciona en la mayoría de navegadores, pero puede requerir un toque previo del usuario. | Asegurar que siempre hay un toque antes de hablar. |
-| **Llamar (`tel:`)** | Funciona en el navegador del móvil; en ordenador no hace nada útil. | En ordenador, mostrar el número en grande en lugar del botón de llamada. |
+| **Llamar (`tel:`)** | Funciona en el navegador del celular; en computadora no hace nada útil. | En computadora, mostrar el número en grande en lugar del botón de llamada. |
 | **Portapapeles** | El navegador pide permiso para leerlo. | Mantener como opción secundaria. |
 | **API routes** | Necesitan `"web": { "output": "server" }` y un hosting con servidor (EAS Hosting). Un hosting solo estático no las ejecuta. | Desplegar en EAS Hosting desde el principio y comprobarlo en la hora 0–2. |
 
-> 📱 **Recomendación:** grabar la demo del vídeo desde un **móvil Android con Chrome**, que es donde mejor funcionan cámara, voz y llamadas.
+> 📱 **Recomendación:** grabar la demo del video desde un **celular Android con Chrome**, que es donde mejor funcionan cámara, voz y llamadas.
 
 ---
 
@@ -321,7 +325,8 @@ Decirle "parece normal" a una estafa es **mucho peor** que lo contrario. Medidas
 - **Nunca** decir "es seguro" ni "100 %". El veredicto verde es *"Parece normal"* y siempre va con *"Aun así, nunca des tus claves a nadie."*
 - Ante la duda, la IA debe elegir **dudoso** (incluido en el prompt).
 - Las **reglas locales de enlaces** actúan como red de seguridad: si detectan algo grave, el resultado **no puede ser verde**, diga lo que diga la IA.
-- Regla extra: si el mensaje pide **dinero, claves o códigos**, como mínimo será **dudoso**.
+- **Modelo propio en zona alta:** si el modelo da una puntuación alta (`p ≥ T_MID`), la IA no puede bajar el resultado a verde (`Sonny_Modelo_y_Arquitectura.md` 8.3).
+- ~~Regla extra: si el mensaje pide **dinero, claves o códigos**, como mínimo será **dudoso**.~~ 🔁 **Eliminada**: marcaba como dudosos los códigos legítimos de los bancos. Lo deciden el modelo y la IA.
 
 ### 8.2 Falsos positivos
 
@@ -331,17 +336,19 @@ Marcar como estafa un mensaje real del banco puede asustar o hacer que la person
 
 | Situación | Mensaje |
 |---|---|
-| Sin internet | *"No tengo conexión ahora mismo. Mientras tanto, no toques ningún enlace y pregunta a alguien de confianza."* + botón de llamar |
-| La IA tarda más de 20 s | *"Esto está tardando. No toques el enlace mientras tanto."* + reintentar |
-| La IA falla | Usar solo las reglas locales y mostrar **dudoso** como mínimo |
-| La foto no se lee | *"No consigo leer bien la foto. Prueba a acercarte más o a leérmelo en voz alta."* |
+| 🔁 Sin internet | Veredicto del **modelo propio** (filtro 1) con el aviso *"Sin conexión: revisión básica."* + botón de llamar. Solo las **fotos** necesitan internet: *"Sin conexión no puedo leer fotos. ¿Me escribes o pegas el mensaje?"* |
+| 🔁 La IA tarda más de 15 s | Se usa el veredicto del modelo propio, como sin internet (`Sonny_Modelo_y_Arquitectura.md` 8.3) |
+| 🔁 La IA falla | Se usa el veredicto del modelo propio + reglas, como sin internet |
+| La foto no se lee | *"No puedo leer bien la foto. Intenta acercarte más o a leérmelo en voz alta."* |
 | Mensaje vacío o sin sentido | *"No he encontrado ningún mensaje. ¿Lo intentamos otra vez?"* |
 
 **Nunca** mostrar mensajes de error técnicos (códigos, "Error 500", trazas).
 
-### 8.4 Modo sin conexión (opcional)
+### 8.4 🔁 Modo sin conexión (ya no es opcional)
 
-Las reglas de enlaces y una lista de palabras clave peligrosas (clave, PIN, código, transferencia, Bizum, bloqueada, urgente…) pueden ejecutarse **en el dispositivo** sin IA. Si no hay conexión, se ofrece al menos un veredicto prudente.
+**Sustituido:** en lugar de una lista de palabras clave, el dispositivo ejecuta **los modelos propios Sonny-EN y Sonny-ES** + las reglas de enlaces (`Sonny_Modelo_y_Arquitectura.md` 8.2, código en `modelo/`). En la APK funciona sin internet desde el primer uso.
+
+> ⚠️ Limitación medida (`modelo/reports/bateria.md`): sin internet, el "hijo/familiar en apuros" puede salir como "parece normal". Recopilar mensajes reales de este tipo es prioritario.
 
 ---
 
@@ -363,7 +370,7 @@ Las reglas de enlaces y una lista de palabras clave peligrosas (clave, PIN, cód
 - Revisar que el proveedor de IA elegido **no use los datos para entrenar** (o indicarlo en la política).
 - En la pantalla de foto: *"Si en la foto salen datos personales, puedes taparlos con el dedo."*
 - **Aviso visible y sencillo:** *"Sonny te ayuda, pero puede equivocarse. Ante la duda, llama siempre al número oficial."*
-- No usar **logotipos de bancos o empresas reales** en la app ni en el vídeo; en los ejemplos, usar marcas inventadas o texto sin logos.
+- No usar **logotipos de bancos o empresas reales** en la app ni en el video; en los ejemplos, usar marcas inventadas o texto sin logos.
 - **Nombre "Sonny":** se parece a la marca "Sony". Para un hackathon no debería ser un problema, pero no usar tipografías, colores ni un logo que recuerden al de Sony. Si el proyecto continúa después del hackathon, revisar el registro de marca antes de publicarlo en tiendas.
 - No presentar la app como servicio oficial ni afiliado a ningún banco, policía u organismo.
 
@@ -376,7 +383,7 @@ Es lo que más puede diferenciar el proyecto frente al jurado.
 ### 11.1 Prueba rápida (30 minutos)
 
 - Probar con **2 o 3 personas mayores** (abuelos, vecinos, familiares).
-- Darles un móvil con un SMS de estafa de ejemplo y decir solo: *"Comprueba si este mensaje es de fiar."*
+- Darles un celular con un SMS de estafa de ejemplo y decir solo: *"Comprueba si este mensaje es de fiar."*
 - **No ayudar.** Observar dónde se atascan.
 - Anotar: ¿encontraron el botón? ¿entendieron el resultado? ¿sabrían qué hacer?
 
@@ -392,12 +399,12 @@ Preparar al menos 10 mensajes para comprobar que la app acierta:
 
 | Tipo | Ejemplo |
 |---|---|
-| Falso paquete | Paquete retenido, pague 1,99 € |
+| Falso paquete | Paquete retenido, pague 1,99 |
 | Falso banco | Su cuenta ha sido bloqueada, verifique aquí |
-| "Hijo en apuros" | Hola mamá, se me ha roto el móvil, este es mi número nuevo |
+| "Hijo en apuros" | Hola mamá, se me rompió el celular, este es mi número nuevo |
 | Falso premio | Ha ganado un iPhone, reclámelo aquí |
-| Falsa multa / Hacienda | Tiene una multa pendiente, pague antes de 24 h |
-| Falsa oferta de trabajo | Gane 300 € al día desde casa |
+| Falsa multa / impuestos | Tiene una multa pendiente, pague antes de 24 h |
+| Falsa oferta de trabajo | Gane 300 dólares al día desde casa |
 | Inversión | Duplique su dinero con criptomonedas |
 | **Legítimo:** código de verificación | Tu código es 482913. No lo compartas. |
 | **Legítimo:** cita médica | Recordatorio de su cita el día 12 a las 10:00 |
@@ -411,22 +418,22 @@ Las reglas que tenemos por escrito **no coinciden** con las que publica Devpost:
 
 | Aspecto | Reglas recibidas | Página de Devpost |
 |---|---|---|
-| Vídeo | 2–5 minutos | 1–3 minutos |
+| Video | 2–5 minutos | 1–3 minutos |
 | Evaluación | 4 criterios al 25 % | Solo "Impacto" |
 | Edad | 13+ | Mayoría de edad del país de residencia |
 | Participantes | Abierto a todos | Solo estudiantes, sin empresas |
 
 **Qué hacer:**
 
-- Hacer el **vídeo de 2–3 minutos**: cumple ambas versiones.
+- Hacer el **video de 2–3 minutos**: cumple ambas versiones.
 - Cubrir **los cuatro criterios**, pero **poner el impacto en primer plano**.
 - **Comprobar la elegibilidad** de cada miembro del equipo (edad y condición de estudiante).
 - Si hay dudas, escribir al organizador desde el enlace de contacto de Devpost.
 
 ### Otros puntos del envío
 
-- La página de Devpost y el vídeo, **en inglés** (el hackathon es internacional). La app puede estar en español con opción de inglés.
-- Si el vídeo está en español, **añadir subtítulos en inglés**.
+- La página de Devpost y el video, **en inglés** (el hackathon es internacional). 🔁 La app arranca en **inglés** por defecto, con **español** como opción en la primera pantalla y en Ajustes.
+- Si el video está en español, **añadir subtítulos en inglés**.
 - El repositorio debe ser **público** y tener **instrucciones de instalación** en el `README.md`.
 - Proyecto **creado durante el periodo** del hackathon: hacer commits frecuentes como prueba.
 - Si se usa IA para generar código, que sea conforme a los términos de la herramienta y que el equipo entienda y pueda explicar lo construido.
@@ -439,8 +446,8 @@ Las reglas que tenemos por escrito **no coinciden** con las que publica Devpost:
 | Riesgo | Probabilidad | Plan B |
 |---|---|---|
 | Las API routes no funcionan en el despliegue | Media | Mover el endpoint a una función de Vercel y exportar la web como estática |
-| El reconocimiento de voz falla en el navegador | Alta | Ocultar el botón "Léemelo"; mencionarlo como función de la versión móvil |
-| La cámara no abre en web | Media | Usar el selector de imágenes, que en móvil ofrece "Hacer foto" |
+| El reconocimiento de voz falla en el navegador | Alta | Ocultar el botón "Léemelo"; mencionarlo como función de la versión para celular |
+| La cámara no abre en web | Media | Usar el selector de imágenes, que en el celular ofrece "Tomar foto" |
 | Se agota el crédito de la API durante la evaluación | Baja | Límite por IP + límite de gasto + recargar crédito |
 | No da tiempo a terminar | Media | Seguir el orden de la [sección 14](#14-prioridades-si-falta-tiempo) |
 | La IA da respuestas largas o técnicas | Media | Validación con `zod` + recorte de textos + prompt estricto |
@@ -454,10 +461,10 @@ Construir en este orden. Cada nivel debe funcionar antes de pasar al siguiente.
 
 | Nivel | Incluye | Si solo llegamos aquí… |
 |---|---|---|
-| **1. Imprescindible** | Pegar texto → IA → titular + razón + pasos. Desplegado en web. | Ya se puede presentar |
-| **2. Lo que lo hace para mayores** | Diseño grande, voz automática, botón "Repetir", lenguaje sencillo | Proyecto sólido y coherente con la idea |
-| **3. Lo que lo hace destacar** | Foto/captura, reglas de enlaces, contacto de confianza y llamada | Proyecto competitivo |
-| **4. Extras** | "Léemelo", "¿Por qué?" con señales resaltadas, emergencia, idiomas | Proyecto completo |
-| **5. Si sobra tiempo** | Modo sin conexión, historial, mini-curso | Pulido final |
+| **1. Imprescindible** | Pegar texto → **modelo propio** (ya entrenado en `modelo/`) + IA → titular + razón + pasos. Desplegado en web. | Ya se puede presentar |
+| **2. Lo que lo hace para mayores** | Diseño grande, texto primero, botón "Escuchar" (voz opcional), lenguaje sencillo | Proyecto sólido y coherente con la idea |
+| **3. Lo que lo hace destacar** | Foto/captura, reglas de enlaces, contacto de confianza y llamada, APK sin internet | Proyecto competitivo |
+| **4. Extras** | "Léemelo", "¿Por qué?" con señales resaltadas, emergencia | Proyecto completo |
+| **5. Si sobra tiempo** | Historial, mini-curso | Pulido final |
 
-> Regla de oro: **reservar al menos 3 horas al final para vídeo y Devpost**, aunque falten funciones. Un proyecto bien presentado con el nivel 2 puntúa más que uno con el nivel 4 sin buen vídeo.
+> Regla de oro: **reservar al menos 3 horas al final para video y Devpost**, aunque falten funciones. Un proyecto bien presentado con el nivel 2 puntúa más que uno con el nivel 4 sin buen video.
